@@ -1,0 +1,21 @@
+[package]
+name = "async-rocksdb"
+version = "0.1.0"
+edition = "2021"
+description = "Async-aware wrapper for RocksDB"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/olatunbosunoyeleke94/async-rocksdb" 
+keywords = ["rocksdb", "database", "async", "embedded"]
+categories = ["database"]
+
+
+[dependencies]
+rocksdb = "0.24.0"  # Core bindings
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }  # For async runtime and spawn_blocking
+futures = "0.3"  # For async traits and streams
+thiserror = "1"  # For error handling
+async-trait = "0.1"  # If using trait objects for async
+
+[dev-dependencies]
+tempfile = "3.24.0"
+
